@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  mariadb:
+    image: mariadb:10.2
+    ports:
+      - 3307:3306
+    environment:
+      #MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: playlists_java
+
+
+#  playlistsimg:
+#    restart: always
+#    build:
+#      dockerfile: ./Dockerfile
+#      context: .
+#    image: playlistsimg
+#    ports:
+#      - 8083:8080
+##    networks:
+##      - bookstore-mariadb
+#    environment:
+#      DB_DATABASE: playlists_java
+#      DB_USER: root
+#      DB_HOST: jdbc:mariadb://mariadb/playlists_java
+#      DB_PASSWORD: password
+#    depends_on:
+#      - mariadb
+
+#networks:
+#  playlistsimg-mariadb:
+#    driver: bridge
